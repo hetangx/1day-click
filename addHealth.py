@@ -1,7 +1,8 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-driver=webdriver.Chrome(executable_path='C:\Program Files (x86)\Google\chromedriver.exe')
+# driver=webdriver.Chrome(executable_path='C:\Program Files (x86)\Google\chromedriver.exe')
+driver = webdriver.Chrome()
 driver.get("http://ehall.seu.edu.cn/qljfwapp2/sys/lwReportEpidemicSeu/index.do?t_s=1598842050761&amp_sec_version_=1&gid_=eEFadUJjQWRoNXZjcVBHNjRWZUhCcFI5d0RUdERPTVJVZGRlM3JlbnpoaHFvZ01pSUhuZ3pwYTB5Nm9QbkJ1Q0dsOTExOWRWWlRqMlNHY0NqVGxhREE9PQ&EMAP_LANG=zh&THEME=indigo#/dailyReport")
 js_health = """
 $('div[data-action="add"]').click();
@@ -19,6 +20,9 @@ var interval = setInterval(() => {
 """
 try:
 #输入账户和密码
+
+# user file
+
  driver.find_element_by_xpath("//*[@id='username']").send_keys("")
  driver.find_element_by_xpath("//*[@id='password']").send_keys("")
  print("输入账号成功")
